@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/aterm-java-1.6.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-cli.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-core.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-datatypes.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-dig.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-el.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-explanation.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-jena.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-modularity.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-owlapi.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-owlapiv3.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-pellint.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-query.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-rules.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/pellet-test.jar"/>
+	<classpathentry kind="lib" path="/Users/caiolima/Documents/web-workspace/PeletSample/lib/servlet.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
