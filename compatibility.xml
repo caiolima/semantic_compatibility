@@ -1,0 +1,637 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY compatibility "http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:compatibility="http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Ontology rdf:about="http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#composedOf -->
+
+    <ObjectProperty rdf:about="&compatibility;composedOf">
+        <rdfs:domain rdf:resource="&compatibility;ProductSpecs"/>
+        <rdfs:range rdf:resource="&compatibility;ProductSpecs"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#hasBrand -->
+
+    <ObjectProperty rdf:about="&compatibility;hasBrand">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&compatibility;Brand"/>
+        <rdfs:domain rdf:resource="&compatibility;Specs"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#hasDetail -->
+
+    <ObjectProperty rdf:about="&compatibility;hasDetail"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#hasInterface -->
+
+    <ObjectProperty rdf:about="&compatibility;hasInterface">
+        <rdfs:range rdf:resource="&compatibility;Interface"/>
+        <rdfs:domain rdf:resource="&compatibility;Specs"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#hasStandard -->
+
+    <ObjectProperty rdf:about="&compatibility;hasStandard">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&compatibility;Interface"/>
+        <rdfs:range rdf:resource="&compatibility;Standard"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#memberOf -->
+
+    <ObjectProperty rdf:about="&compatibility;memberOf">
+        <rdfs:range rdf:resource="&compatibility;ProductFamilySpecs"/>
+        <rdfs:domain rdf:resource="&compatibility;ProductSpecs"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#productCompatibleWith -->
+
+    <ObjectProperty rdf:about="&compatibility;productCompatibleWith"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#standardCompatibleWith -->
+
+    <ObjectProperty rdf:about="&compatibility;standardCompatibleWith">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:range rdf:resource="&compatibility;Standard"/>
+        <rdfs:domain rdf:resource="&compatibility;Standard"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#hasName -->
+
+    <DatatypeProperty rdf:about="&compatibility;hasName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&compatibility;Detail"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#hasQuantity -->
+
+    <DatatypeProperty rdf:about="&compatibility;hasQuantity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&compatibility;Interface"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#hasValue -->
+
+    <DatatypeProperty rdf:about="&compatibility;hasValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&compatibility;Detail"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#Brand -->
+
+    <Class rdf:about="&compatibility;Brand"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#Detail -->
+
+    <Class rdf:about="&compatibility;Detail"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#Interface -->
+
+    <Class rdf:about="&compatibility;Interface"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#ProductFamilySpecs -->
+
+    <Class rdf:about="&compatibility;ProductFamilySpecs">
+        <rdfs:subClassOf rdf:resource="&compatibility;Specs"/>
+        <disjointWith rdf:resource="&compatibility;ProductSpecs"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#ProductSpecs -->
+
+    <Class rdf:about="&compatibility;ProductSpecs">
+        <rdfs:subClassOf rdf:resource="&compatibility;Specs"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#Specs -->
+
+    <Class rdf:about="&compatibility;Specs">
+        <disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&compatibility;ProductFamilySpecs"/>
+            <rdf:Description rdf:about="&compatibility;ProductSpecs"/>
+        </disjointUnionOf>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#Standard -->
+
+    <Class rdf:about="&compatibility;Standard"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Black_Cartdrige -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Black_Cartdrige">
+        <rdf:type rdf:resource="&compatibility;ProductSpecs"/>
+        <compatibility:hasInterface rdf:resource="&compatibility;HP_60_Black_Cartridge_Connector"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Black_Cartdrige_Slot_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Black_Cartdrige_Slot_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+        <compatibility:standardCompatibleWith rdf:resource="&compatibility;HP_60_Black_Cartridge_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Black_Cartridge_Connector -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Black_Cartridge_Connector">
+        <rdf:type rdf:resource="&compatibility;Interface"/>
+        <compatibility:hasStandard rdf:resource="&compatibility;HP_60_Black_Cartridge_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Black_Cartridge_Slot -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Black_Cartridge_Slot">
+        <rdf:type rdf:resource="&compatibility;Interface"/>
+        <compatibility:hasStandard rdf:resource="&compatibility;HP_60_Black_Cartdrige_Slot_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Black_Cartridge_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Black_Cartridge_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+        <compatibility:standardCompatibleWith rdf:resource="&compatibility;HP_60_Black_Cartdrige_Slot_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Color_Cartdrige -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Color_Cartdrige">
+        <rdf:type rdf:resource="&compatibility;ProductSpecs"/>
+        <compatibility:hasInterface rdf:resource="&compatibility;HP_60_Color_Cartridge_Connector"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Color_Cartdrige_Slot_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Color_Cartdrige_Slot_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+        <compatibility:standardCompatibleWith rdf:resource="&compatibility;HP_60_Color_Cartdrige_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Color_Cartdrige_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Color_Cartdrige_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+        <compatibility:standardCompatibleWith rdf:resource="&compatibility;HP_60_Color_Cartdrige_Slot_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Color_Cartridge_Connector -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Color_Cartridge_Connector">
+        <rdf:type rdf:resource="&compatibility;Interface"/>
+        <compatibility:hasStandard rdf:resource="&compatibility;HP_60_Color_Cartdrige_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_60_Color_Cartridge_Slot -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_60_Color_Cartridge_Slot">
+        <rdf:type rdf:resource="&compatibility;Interface"/>
+        <compatibility:hasStandard rdf:resource="&compatibility;HP_60_Color_Cartdrige_Slot_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_Deskjet_4200 -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_Deskjet_4200">
+        <rdf:type rdf:resource="&compatibility;ProductSpecs"/>
+        <compatibility:memberOf rdf:resource="&compatibility;HP_Deskjet_4200_Series"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#HP_Deskjet_4200_Series -->
+
+    <NamedIndividual rdf:about="&compatibility;HP_Deskjet_4200_Series">
+        <rdf:type rdf:resource="&compatibility;ProductFamilySpecs"/>
+        <compatibility:hasInterface rdf:resource="&compatibility;HP_60_Black_Cartridge_Slot"/>
+        <compatibility:hasInterface rdf:resource="&compatibility;HP_60_Color_Cartridge_Slot"/>
+        <compatibility:hasInterface rdf:resource="&compatibility;USB_B-Female_Connector"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_A-Female_Connector_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_A-Female_Connector_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_A-Male_B-Male_Cable -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_A-Male_B-Male_Cable">
+        <rdf:type rdf:resource="&compatibility;ProductFamilySpecs"/>
+        <compatibility:hasInterface rdf:resource="&compatibility;USB_A-Male_Cable_Connector"/>
+        <compatibility:hasInterface rdf:resource="&compatibility;USB_B-Male_Cable_Connector"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_A-Male_Cable_Connector -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_A-Male_Cable_Connector">
+        <rdf:type rdf:resource="&compatibility;Interface"/>
+        <compatibility:hasStandard rdf:resource="&compatibility;USB_A-Male_Connector_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_A-Male_Connector_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_A-Male_Connector_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+        <compatibility:standardCompatibleWith rdf:resource="&compatibility;USB_A-Female_Connector_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_B-Female_Connector -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_B-Female_Connector">
+        <rdf:type rdf:resource="&compatibility;Interface"/>
+        <compatibility:hasStandard rdf:resource="&compatibility;USB_B-Female_Connector_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_B-Female_Connector_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_B-Female_Connector_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_B-Male_Cable_Connector -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_B-Male_Cable_Connector">
+        <rdf:type rdf:resource="&compatibility;Interface"/>
+        <compatibility:hasStandard rdf:resource="&compatibility;USB_B-Male_Connector_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#USB_B-Male_Connector_Standard -->
+
+    <NamedIndividual rdf:about="&compatibility;USB_B-Male_Connector_Standard">
+        <rdf:type rdf:resource="&compatibility;Standard"/>
+        <compatibility:standardCompatibleWith rdf:resource="&compatibility;USB_B-Female_Connector_Standard"/>
+    </NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&compatibility;Brand"/>
+            <rdf:Description rdf:about="&compatibility;Interface"/>
+            <rdf:Description rdf:about="&compatibility;Specs"/>
+            <rdf:Description rdf:about="&compatibility;Standard"/>
+        </members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#p1">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#i1">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#p2">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#i2">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#s1">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#s2">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#f">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&compatibility;productCompatibleWith"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#p1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#p2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="&compatibility;hasStandard"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#i2"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl#s2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="&compatibility;memberOf"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl#f"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl#p1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="&compatibility;standardCompatibleWith"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl#s1"/>
+                                                                <swrl:argument2 rdf:resource="urn:swrl#s2"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&compatibility;hasStandard"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#s1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="&compatibility;hasInterface"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#i2"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#p2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&compatibility;hasInterface"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#f"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#i1"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="&compatibility;hasInterface"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#i2"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#p2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="&compatibility;standardCompatibleWith"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl#s1"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl#s2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="&compatibility;hasStandard"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#i2"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl#s2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&compatibility;hasStandard"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#s1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&compatibility;hasInterface"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#i1"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#p1"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&compatibility;productCompatibleWith"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#p1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#p2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
