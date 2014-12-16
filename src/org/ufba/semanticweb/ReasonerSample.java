@@ -39,27 +39,7 @@ public class ReasonerSample {
 	    	System.out.print("> ");
 	    	command = scan.nextLine();
 	    	proccessCommand(command);
-	    } while(true);
-	    
-//		String queryString =    "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-//								"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-//								"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
-//								"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-//								"PREFIX comp: <http://www.semanticweb.org/ygor/ontologies/2014/10/compatibility#>" +
-//								"SELECT * WHERE { ?p1 comp:productCompatibleWith comp:HP_Deskjet_4200_Series }";
-//                                        		
-//		Query query = QueryFactory.create(queryString);
-//
-//		// Execute the query and obtain results
-//		QueryExecution qe = QueryExecutionFactory.create(query, infModel);
-//		//futebol.write(System.out);
-//		ResultSet results = qe.execSelect();
-//		
-//		// Output query results
-//		ResultSetFormatter.out(System.out, results, query);
-//
-//		// Important - free up resources used running the query
-//		qe.close();	    
+	    } while(true);    
 	}
 	
 	private static void setupKnowledegeBase() {
@@ -84,6 +64,9 @@ public class ReasonerSample {
 			case "compatibility":
 				verifyCompatibility();
 				break;
+			case "complist":
+				verifyCompatibilityList();
+				break;
 			case "exit":
 				System.out.print("Finalizando programa...\n");
 				System.exit(0);
@@ -93,8 +76,8 @@ public class ReasonerSample {
 		}
 	}
 
-	private static void verifyCompatibility() {
-		System.out.print("Choose a product below\n");
+	private static String pickProduct() {
+		
 		int i = 0;
 		ArrayList<String> products =  KnoledgeBase.getInstance().getAllProducts();
 		for(String p:products){
@@ -107,9 +90,42 @@ public class ReasonerSample {
 		String opt = scan.nextLine();
 		int opt_n = Integer.parseInt(opt);
 		
-		String choice = products.get(opt_n);
+		String choice1 = products.get(opt_n);
 		
-		System.out.print("Your choice: " + choice + "\n");
+		System.out.print("Your choice: " + choice1 + "\n");
+				
+		return choice1;
+	}
+	
+	private static void verifyCompatibility() {
+		System.out.print("Choose a product below\n");
+		String choice1 = pickProduct();
+		
+		System.out.print("Choose another product below\n");
+		String choice2 = pickProduct();
+		
+		ArrayList<String> compProducts = KnoledgeBase.getInstance().getCompatibilityProducts(choice1);
+		if (compProducts.contains(choice2)) {
+			System.out.println("The products are compatible");
+		} else {
+			System.out.println("The products are NOT compatible");
+		}
+		
+	}
+	
+	private static void verifyCompatibilityList() {
+		System.out.print("Choose a product below\n");
+		String choice1 = pickProduct();
+		
+		ArrayList<String> compProducts = KnoledgeBase.getInstance().getCompatibilityProducts(choice1);
+		
+		System.out.print("This product is compatible with: \n");
+		
+		int i = 0;
+		for(String p:compProducts){
+			System.out.print(i + " - " + p + "\n");
+			i++;
+		}
 	}
 	
 }
